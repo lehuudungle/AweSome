@@ -22,8 +22,11 @@ class Topica extends Component {
     render() {
         console.log("render")
         return (
-            <View style = {titles.content}>
-               <Ovuong></Ovuong>
+            <View style = {styles.container}>
+                
+                <Ovuong/>
+                <Ovuong/>
+                <Ovuong/>
             </View>
         );  
     }
@@ -33,36 +36,52 @@ class Topica extends Component {
     }
 }
 
+export default class Ovuong extends Component {
+    render() {
+        return(
+            <View style = {styles.column}></View>
+        )
+    };
+}
 
-
-var titles = StyleSheet.create({
-    tieude: {
-        marginTop: 100, marginLeft: 50, color: "red"
-    },
-    maunen: {
-        backgroundColor: "#09C"
-    },
-    content: {
-        backgroundColor: "gray",
+var styles = StyleSheet.create({
+    container: {
+        backgroundColor: "grey",
+        flexDirection: "column",
         flex: 1,
-        flexDirection: 'column',
     },
-    view1: {
-        backgroundColor: "green",
-        flex: 1
-    },
-    view2: {
+    row: {
         backgroundColor: "red",
-        flex: 2
+        borderWidth: 1,
+        height: 100,
+        width: 100,
     },
-    // ovuong: {
-    //     backgroundColor: "yellow",
-    //     borderWidth: 1,
-    //     width: 200,
-    //     height: 200, 
-    // }
-    
-});
+
+    column: {
+        backgroundColor: "green",
+        flex: 1,
+        borderWidth: 1,
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    numpad: {
+        width: 50,
+        height: 50,
+        backgroundColor: "white",
+        borderWidth: 0.5,
+        // justifyContent: "center",
+        // alignItems: "center"    
+    },
+
+    numpadGrey: {
+        flex: 1,
+        backgroundColor: "grey",
+        borderWidth: 0.5
+    },
+    number: {
+        fontSize: 20
+    }
+})
 
 // Đăng ký register
 AppRegistry.registerComponent('AwesomeProject', () => Topica);
