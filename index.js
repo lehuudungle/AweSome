@@ -1,9 +1,10 @@
 /** @format */
 // import thư viện 
 import {AppRegistry, 
-    View, Text, StatusBar, StyleSheet
+    View, StyleSheet
 } from 'react-native';
 import React, {Component} from 'react';
+import Ovuong from './componens/Topica.js';
 
 
 // viet code
@@ -22,8 +23,7 @@ class Topica extends Component {
         console.log("render")
         return (
             <View style = {titles.content}>
-                <View style = {titles.view1} ></View>
-                <View style = {titles.view2} ></View>
+               <Ovuong></Ovuong>
             </View>
         );  
     }
@@ -33,6 +33,8 @@ class Topica extends Component {
     }
 }
 
+
+
 var titles = StyleSheet.create({
     tieude: {
         marginTop: 100, marginLeft: 50, color: "red"
@@ -41,9 +43,9 @@ var titles = StyleSheet.create({
         backgroundColor: "#09C"
     },
     content: {
-        backgroundColor: "yellow",
+        backgroundColor: "gray",
         flex: 1,
-        flexDirection: 'row',
+        flexDirection: 'column',
     },
     view1: {
         backgroundColor: "green",
@@ -52,7 +54,13 @@ var titles = StyleSheet.create({
     view2: {
         backgroundColor: "red",
         flex: 2
-    }
+    },
+    // ovuong: {
+    //     backgroundColor: "yellow",
+    //     borderWidth: 1,
+    //     width: 200,
+    //     height: 200, 
+    // }
     
 });
 
