@@ -6,7 +6,7 @@ import {
 export  default class Ovuong extends Component {
     render() {
         return(
-            <View style = {titles .ovuong}/>
+            <View style = {titles.ovuong}/>
         );
     }
 }

@@ -1,87 +1,73 @@
 /** @format */
 // import thư viện 
 import {AppRegistry, 
-    View, StyleSheet
+    View, StyleSheet, Text, TouchableOpacity
 } from 'react-native';
 import React, {Component} from 'react';
-import Ovuong from './componens/Topica.js';
+import Ovuong from './componens/Topica';
 
 
 // viet code
 class Topica extends Component {
-
-    constructor(props) {
-        super(props)
-        console.log("constructor")
-    }
-
-    componentWillMount() {
-        console.log("ComponentWillMount")
+    clickMe(name) {
+        alert("Function: YOu Click "+name)
     }
 
     render() {
         console.log("render")
         return (
-            <View style = {styles.container}>
-                
-                <Ovuong/>
-                <Ovuong/>
-                <Ovuong/>
-            </View>
-        );  
+            <Navigator
+                initialRoute = {{name: "ManHinhVang"}}
+            />
+        );
     }
 
-    componentDidMount() {
-        console.log("ComponentDidMount")
-    }
 }
 
-export default class Ovuong extends Component {
-    render() {
-        return(
-            <View style = {styles.column}></View>
-        )
-    };
-}
+
 
 var styles = StyleSheet.create({
-    container: {
-        backgroundColor: "grey",
-        flexDirection: "column",
-        flex: 1,
-    },
-    row: {
-        backgroundColor: "red",
-        borderWidth: 1,
-        height: 100,
-        width: 100,
-    },
-
-    column: {
-        backgroundColor: "green",
-        flex: 1,
-        borderWidth: 1,
-        justifyContent: "center",
-        alignItems: "center"
-    },
-    numpad: {
-        width: 50,
+    khachhang: {
+        backgroundColor: "yellow",
         height: 50,
-        backgroundColor: "white",
-        borderWidth: 0.5,
-        // justifyContent: "center",
-        // alignItems: "center"    
+        justifyContent: "center",
     },
 
-    numpadGrey: {
-        flex: 1,
-        backgroundColor: "grey",
-        borderWidth: 0.5
-    },
-    number: {
-        fontSize: 20
+    button: {
+        backgroundColor: "green",
+        width: 100,
+        height: 30,
+        marginTop: 100,
+        marginLeft: 50
     }
-})
+});
+
+export default class ManHinhVang extends  Component {
+    render(){
+        return (
+            <View
+                style={{
+                    flex: 1,
+                    backgroundColor: "green",
+
+                }}>
+
+            </View>
+        );
+    }
+}
+
+export class ManHinhDo extends  Component {
+    render(){
+        return (
+            <View style = {{flex: 1, brackgroundColor: "red"}}></View>
+        );
+    }
+}
+
+
+
+
 
 // Đăng ký register
 AppRegistry.registerComponent('AwesomeProject', () => Topica);
